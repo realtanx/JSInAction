@@ -1,3 +1,5 @@
+let local_random = require('./random-integer');
+
 function indexOf(arr, value) {
     for (const i in arr) {
         console.log(i);
@@ -80,3 +82,11 @@ console.log(Object.prototype);
 
 let testArr = [1, 2, '3', '4'];
 console.log(testArr);
+
+
+// module
+console.log(local_random);
+console.log('random number -> ' + local_random());
+console.log('random number -> ' + local_random());
+console.log('random number -> ' + local_random());
+

@@ -22,7 +22,7 @@ let result = arr.map(Math.sqrt);
 console.log(result);
 
 result = [1, 2, 3, 4].map(function (x) {
-   return x * 10;
+    return x * 10;
 });
 console.log(result);
 
@@ -31,11 +31,11 @@ console.log(result);
 
 // arrow function
 let average = (x, y) => {
-    return (x + y)/2;
+    return (x + y) / 2;
 };
 console.log(average(10, 20));
 
-let state = (x, y) => ({name: "test", type: "object"});
+let state = (x, y) => ({ name: "test", type: "object" });
 console.log(state(1, 2));
 
 
@@ -59,7 +59,7 @@ console.log(state(1, 2));
 let harry = {
     name: "Harry",
     salary: 10000,
-    printSalary: function() {
+    printSalary: function () {
         console.log(this.name + "\'s salary is: " + this.salary);
     },
 };

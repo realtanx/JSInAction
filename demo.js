@@ -90,3 +90,37 @@ console.log('random number -> ' + local_random());
 console.log('random number -> ' + local_random());
 console.log('random number -> ' + local_random());
 
+
+/**
+ * loop
+ * 
+ * for/of
+ * The for/of loop works with iterable objects.
+ * 
+ * for/in
+ * for/in loop works with any object.
+ * 
+ * When working with arrays, you almost always want to use for/of instead of for/in.
+ *  
+ */
+console.log("+++++++++++ for/of +++++++++++");
+let datas = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+let sum = 0;
+for (const data of datas) {
+    sum += data;
+}
+console.log(sum);
+
+console.log("+++++++++++ for/in +++++++++++");
+for (const key in datas) {
+    console.log(key);
+}
+
+let obj = { x: 1, y: 2, z: 3 }
+let entry = Object.entries(obj);
+console.log(entry);
+let str = '';
+for (const [k, v] of entry) {
+    str += k + v;
+}
+console.log(str);

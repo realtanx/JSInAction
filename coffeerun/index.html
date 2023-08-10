@@ -16,12 +16,12 @@
                 <form data-coffee-order="form" action="">
                     <div class="form-group">
                         <label for="coffeeOrder">Coffee Order</label>
-                        <input class="form-control" name="coffee" id="coffeeOrder">
+                        <input class="form-control" name="coffee" id="coffeeOrder" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input class="form-control" type="email" name="email" id="email" value=""
-                            placeholder="realtanx@mail.com">
+                            placeholder="realtanx@mail.com" required>
                     </div>
                     <div class="radio">
                         <label>
@@ -50,11 +50,21 @@
                             <option value="mocha">Mocha</option>
                         </select>
                     </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                    <button type="reset" class="btn btn-default">Reset</button>
                 </form>
             </div>
         </div>
+
+        <div class="panel panel-default"></div>
+        <div class="panel-body">
+            <h4>Pending Order:</h4>
+            <div data-coffee-order="checklist"></div>
+        </div>
     </section>
 
+    <script src="scripts/formhandler.js"></script>
+    <script src="scripts/remotedatastore.js"></script>
     <script src="scripts/datastore.js"></script>
     <script src="scripts/truck.js"></script>
     <script src="scripts/main.js"></script>

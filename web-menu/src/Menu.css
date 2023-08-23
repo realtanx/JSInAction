@@ -1,0 +1,26 @@
+header {
+    border-bottom: 1px solid darkgray;
+    background: #eee;
+}
+
+.menu {
+    display: flex;
+    /* padding: 0; */
+    /* margin: 0; */
+    list-style: none;
+    justify-content: flex-end;
+}
+
+.menu-link {
+    text-decoration: none;
+    display: flex;
+    color: inherit;
+    align-items: center;
+    padding: 8px 16px;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+}
+
+.menu-link:hover {
+    background: lightgray;
+}

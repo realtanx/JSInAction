@@ -1,0 +1,11 @@
+.app {
+    display: flex;
+    flex-direction: column;
+    background-color: darkgray;
+}
+
+.navBar {
+    height: 44px;
+    width: 100%;
+    background-color: antiquewhite;
+}

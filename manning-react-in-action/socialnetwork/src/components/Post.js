@@ -1,11 +1,23 @@
+import Comment from "./Comment";
+import UserHeader from "./UserHeader";
 
-export default function Post({ content, user }) {
+export default function Post({ id, content, user }) {
+
+    function loadPosts() {
+
+    }
+
     return (
         <div className="post">
-            <h2 className="postAuther">
-                {user}
-                <span className="postBody">{content}</span>
-            </h2>
+            <UserHeader />
+            /*
+            post content
+            image
+            link
+            post action: show comments?
+            comments
+            */
+            <Comment />
         </div>
     );
 }

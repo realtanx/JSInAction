@@ -1,9 +1,15 @@
+import './styles/styles.css';
 import Comment from "./components/Comment";
 import CommentBox from "./components/CommentBox";
 import CreateComment from "./components/CreateComment";
+import MyAds from "./components/MyAds";
+import NavBar from "./components/NavBar";
 import Post from "./components/Post";
+import Welcome from "./components/Welcome";
+import CreatePost from './components/CreatePost';
 
 function App() {
+  const mockPosts = [];
   const mockData = {
     post: {
       id: 123,
@@ -39,11 +45,42 @@ function App() {
     ],
   };
 
+  function createNewPost(post) {
+    // upload post data to server or save to local storage
+    console.log("received post data from child component...");
+    console.log(post);
+  }
+
+  function getPosts() {
+    // get posts data from server or local storage
+  }
+
+  const postGroup = mockPosts.map(post => {
+    return (
+      <Post id={""} />
+    );
+  });
 
 
   return (
-    <div>
-      <CommentBox comments={mockData.comments} post={mockData.post} />
+    <div className="app">
+      <NavBar />
+      <Welcome />
+      <div className="home">
+        <CreatePost onPost={createNewPost} />
+        <div className="posts">
+          {postGroup}
+        </div>
+        <div>
+          <button className="loadMore">
+            Load more posts...
+          </button>
+        </div>
+      </div>
+      <div>
+        <MyAds />
+      </div>
+      {/* <CommentBox comments={mockData.comments} post={mockData.post} /> */}
     </div>
   );
 }

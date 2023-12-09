@@ -1,8 +1,17 @@
 import React from 'react';
+import { AppContainer } from './styles';
+import { Column } from './components/Column';
+import { AddNewItem } from './components/AddNewItem';
 
-function App() {
+export const App = () => {
   return (
-    <div></div>
+    <AppContainer>
+      <Column title='todo-column'></Column>
+      <AddNewItem
+        toggleButtonText='+ Add another list'
+        onAdd={console.log}
+      />
+    </AppContainer>
   );
 }
 

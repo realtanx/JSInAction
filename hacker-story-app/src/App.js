@@ -1,23 +1,40 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import List from './component/List';
+import Search from './component/Search';
 
 function App() {
+  const mockList = [
+    {
+      title: "React",
+      objectId: 0
+    },
+    {
+      title: "Redux",
+      objectId: 1
+    }
+  ]
+
+  const [stories, setStories] = useState(mockList)
+
+  console.log('render App');
+
+  function handleSearch(keyword) {
+    console.log(`handleSearch => ${keyword}`);
+
+    const searchedList = mockList.filter((item) => {
+      return item.title.toLowerCase().includes(keyword.toLowerCase())
+    })
+
+    setStories(searchedList)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Story</h1>
+      <Search onSearch={handleSearch} />
+      <hr />
+      <List listData={stories} />
     </div>
   );
 }

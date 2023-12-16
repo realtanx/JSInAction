@@ -29,12 +29,17 @@ function App() {
     setStories(searchedList)
   }
 
+  function handleRemoveStory(item) {
+    const newStories = stories.filter((story) => item.objectId !== story.objectId);
+    setStories(newStories)
+  }
+
   return (
     <div>
       <h1>Story</h1>
       <Search onSearch={handleSearch} />
       <hr />
-      <List listData={stories} />
+      <List listData={stories} onRemoveItem={handleRemoveStory} />
     </div>
   );
 }
